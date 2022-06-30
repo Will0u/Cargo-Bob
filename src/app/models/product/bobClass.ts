@@ -34,7 +34,6 @@ export class Bob {
         isBestSell:boolean
     ) 
     {
-        
         this.name = name ;
         this.image = image ;
         this.brand = brand ;

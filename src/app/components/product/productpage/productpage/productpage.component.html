@@ -1,1 +1,19 @@
-<p>productpage works!</p>
+<section *ngIf="bobDisplayer" >
+    <h1>{{ bobDisplayer.name }}</h1>
+    <img src="{{bobDisplayer.image}}" alt="Image de {{bobDisplayer.name}}">
+    <div class="infoContainer"> 
+        <span>{{bobDisplayer.price}}€</span>
+        <span *ngIf="bobDisplayer.isDelivery">Livraison disponible !</span>
+        <span>{{sizeMessage}} {{bobDisplayer.size}}</span>
+        <span>{{bobDisplayer.color}}</span>
+    </div>
+
+    <h1>caractéristiques</h1>
+    <div class="carac" >    
+        <span>{{bobDisplayer.desc}}</span>
+        <ul *ngFor="let carac of bobDisplayer.carac" >
+            <li> {{carac}} </li>
+        </ul>
+    </div>
+    
+</section>

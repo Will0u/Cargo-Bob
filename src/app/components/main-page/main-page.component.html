@@ -8,6 +8,6 @@
     <p>Ici les meilleurs bobs selon nos utilisateurs !</p>
     
     <section id="bestBobArea">
-        <app-card></app-card>
+        <app-card *ngFor="let bob of bobsArray" [bob]="bob"></app-card>
     </section>
 </section>

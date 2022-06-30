@@ -1,1 +1,10 @@
-<p>card works!</p>
+
+<a *ngIf="bob" class="card" [routerLink]="['bob',bob.id]">
+    <img src="{{ bob.image }}" alt="Image de {{ bob.name }}">
+    <div class="infoContainer">
+        <span class="bobName">{{bob.name}}</span>
+        <span class="bobBrand">{{bob.brand}}</span>
+        <span class="bobPrice">{{bob.price}} €</span>
+        <span class="bobSize">{{ sizeMessage }} {{bob.size}}</span>
+    </div>  
+</a>
