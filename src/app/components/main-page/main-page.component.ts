@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BOB } from 'src/app/models/product/constant/bobConstant';
+import { Bob } from 'src/app/models/product/bobClass';
+import { BobService } from 'src/app/service/bobService/bob.service';
 
 @Component({
   selector: 'app-main-page',
@@ -8,12 +9,16 @@ import { BOB } from 'src/app/models/product/constant/bobConstant';
 })
 export class MainPageComponent implements OnInit {
 
-  bobsArray = BOB ;
+  constructor(
+    private bobService : BobService 
+  ) { }
 
-  constructor() { }
+  bobsArray ?: Bob[] ;
 
   ngOnInit(): void { 
+    this.bobsArray = this.bobService.getBobsArray();
     console.log(this.bobsArray);
+    console.log(this.bobService.getBestSellBobsArray());
   }
 
   
