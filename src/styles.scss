@@ -2,7 +2,8 @@
 @import 'assets/scss/reboot';
 
 
-button {
+button , .linkBtn {
+    text-decoration: none;
     display: block;
     height: fit-content;
     width: fit-content;
@@ -11,14 +12,15 @@ button {
     border: 2px solid black;
     border-radius: 7px;
     transition: transform .3s;
+    padding: .2rem;
 }
 
-button:hover{
+button:hover , .linkBtn:hover{
     transform: scale(1.1);
     transition: transform .3s;
 }
 
-button:active{
+button:active , .linkBtn:active{
     transform: scale(1.05);
     transition: transform .3s;
 }

@@ -1,5 +1,5 @@
 
-<a *ngIf="bob" class="card" [routerLink]="['bob',bob.id]">
+<a *ngIf="bob" class="card" [routerLink]="['/bob',bob.id]">
     <img src="{{ bob.image }}" alt="Image de {{ bob.name }}">
     <div class="infoContainer">
         <span class="bobName">{{bob.name}}</span>

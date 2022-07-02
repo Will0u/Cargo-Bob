@@ -37,4 +37,18 @@ export class BobService {
     } else return 'Couleurs disponibles : '; 
   }
 
+  getCategoriesArray() : string[] {
+    let categArray : string[] = [];
+    BOB.forEach(bob => {
+      if (!categArray.includes(bob.category)) {
+        categArray.push(bob.category);
+      }   
+    });
+    return categArray;   
+  }
+
+  getBobByCateg(categ : string) : Bob[] {
+    return BOB.filter(bob => bob.category == categ);
+  }
+
 }

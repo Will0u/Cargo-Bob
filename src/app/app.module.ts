@@ -10,6 +10,8 @@ import { LegalMentionsComponent } from './components/footer/legal-mentions/legal
 import { CardComponent } from './components/product/productcard/card/card.component';
 import { ProductpageComponent } from './components/product/productpage/productpage/productpage.component';
 import { SamebobcardComponent } from './components/product/samebobcard/samebobcard.component';
+import { DisplaybobComponent } from './components/categories/displaybob/displaybob.component';
+import { DisplaybobCategComponent } from './components/categories/displaybob-categ/displaybob-categ.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { SamebobcardComponent } from './components/product/samebobcard/samebobca
     CardComponent,
     ProductpageComponent,
     SamebobcardComponent,
+    DisplaybobComponent,
+    DisplaybobCategComponent,
   ],
   imports: [
     BrowserModule,

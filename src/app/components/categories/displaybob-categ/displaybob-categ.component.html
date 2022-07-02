@@ -1,0 +1,11 @@
+
+<section>
+    <h1>Nos bobs de type : {{categ}}</h1>
+    <div class="categContainer" >
+        <a class="linkBtn" [routerLink]="['/bob']" > Tout </a>
+        <a *ngFor="let categ of categArray" class="linkBtn" [routerLink]="['/bob/categ',categ]" > {{categ}} </a>
+    </div>
+    
+    <app-card *ngFor="let bob of bobsArray" [bob]="bob"></app-card>
+</section>
+

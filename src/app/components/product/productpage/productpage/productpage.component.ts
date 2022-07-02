@@ -51,14 +51,17 @@ export class ProductpageComponent implements OnInit {
 
   nextElementCarousel() {
     if (this.samebobArrayLenght) {
-      if (this.index == this.samebobArrayLenght-1) {    
-      } else this.index++ ;
+      if (this.index == this.samebobArrayLenght-1){
+        this.index = 0 ;
+      } else this.index++;
     }
   }
 
   prevElementCarousel() {
-    if (this.index > 0) {
-      this.index--;
+    if (this.samebobArrayLenght) {
+      if (this.index == 0) {
+        this.index = this.samebobArrayLenght-1 ;
+      } else this.index--;
     }
   }
 }
