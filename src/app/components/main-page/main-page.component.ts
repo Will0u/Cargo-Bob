@@ -17,6 +17,7 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit(): void { 
     this.bobsArray = this.bobService.getBestSellBobsArray();
+
   }
 
   
