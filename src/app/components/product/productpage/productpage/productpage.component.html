@@ -1,19 +1,35 @@
 <section *ngIf="bobDisplayer" >
-    <h1>{{ bobDisplayer.name }}</h1>
+    <h1 class="bobName">{{ bobDisplayer.name }}</h1>
+    <a [routerLink]="['../..']" class="backButton">retour</a>
     <img src="{{bobDisplayer.image}}" alt="Image de {{bobDisplayer.name}}">
     <div class="infoContainer"> 
-        <span>{{bobDisplayer.price}}€</span>
+        <span>{{bobDisplayer.price}} €</span>
         <span *ngIf="bobDisplayer.isDelivery">Livraison disponible !</span>
         <span>{{sizeMessage}} {{bobDisplayer.size}}</span>
-        <span>{{bobDisplayer.color}}</span>
+        <span> {{colorMessage}} {{bobDisplayer.color}}</span>
     </div>
 
     <h1>caractéristiques</h1>
     <div class="carac" >    
         <span>{{bobDisplayer.desc}}</span>
-        <ul *ngFor="let carac of bobDisplayer.carac" >
-            <li> {{carac}} </li>
+        <ul>
+            <li *ngFor="let carac of bobDisplayer.carac" > {{carac}} </li>
         </ul>
     </div>
-    
+</section>
+
+<section id="sameBobsArea">
+    <h1>produits similaires</h1>
+
+    <div id="carousel" *ngIf="sameBobArray && samebobArrayLenght" >          
+        <button (click)="prevElementCarousel()" class="prevBtn" >-</button>
+        <a class="carouselBody" [routerLink]="['..',sameBobArray[index].id]">
+            <img src="{{sameBobArray[index].image}}" alt="Image de {{sameBobArray[index].name}}">
+            <span>{{sameBobArray[index].name}}</span>
+            <span>{{sameBobArray[index].price}} €</span>
+        </a> 
+        
+        <button (click)="nextElementCarousel()" class="nextBtn" >+</button>      
+    </div>
+
 </section>

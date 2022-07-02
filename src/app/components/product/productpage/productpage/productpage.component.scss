@@ -1,6 +1,68 @@
+$boxShadowBottom : 0px 2px 3px 0px rgba(0,0,0,0.12);
+
+.bobName{text-transform: capitalize;}
 .infoContainer , .carac{
     display: flex;
     flex-direction: column;
-    background-color: red;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    li{
+        list-style-type: none;
+        border-left: 6px solid rgb(0,0,0,0.1);
+        background-color: rgb(0,0,0,0.05);
+        padding: .3rem .3rem .3rem .8rem;
+        border-top-right-radius: 8px ;
+        border-bottom-right-radius: 8px ;
+        margin-bottom: .8rem;
+    }
+    li:last-child{
+        margin: 0;
+    }
 }
 
+.infoContainer{
+    border-top: 1px solid rgb(0,0,0,0.1);
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+img{
+    width: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#carousel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{width: 175px;}
+    .carouselBody{
+        text-decoration: none;
+        color: black;
+        border: 1px solid rgb(0,0,0,0.15);
+        border-radius: 7px;
+        padding-bottom: .5rem;
+        transition: transform .3s , box-shadow .3s;
+        span{
+            display: block;
+            padding: 0 .5rem 0 .5rem;
+            text-transform: capitalize;
+            font-size: .9rem;
+        }
+    }
+    .carouselBody:hover{
+        transform: scale(1.05);
+        box-shadow: $boxShadowBottom;
+        transition: transform .3s , box-shadow .3s;
+    }
+    .carouselBody:active{
+        transform: scale(1.01);
+        transition: transform .3s , box-shadow .3s;
+    }
+    button{border-radius: 50%;}
+    .prevBtn{margin-right: 1rem;}
+    .nextBtn{margin-left: 1rem;}
+}

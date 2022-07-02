@@ -9,6 +9,7 @@ import { FooterComponent } from './components/footer/footer/footer.component';
 import { LegalMentionsComponent } from './components/footer/legal-mentions/legal-mentions.component';
 import { CardComponent } from './components/product/productcard/card/card.component';
 import { ProductpageComponent } from './components/product/productpage/productpage/productpage.component';
+import { SamebobcardComponent } from './components/product/samebobcard/samebobcard.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProductpageComponent } from './components/product/productpage/productpa
     FooterComponent,
     LegalMentionsComponent,
     CardComponent,
-    ProductpageComponent
+    ProductpageComponent,
+    SamebobcardComponent,
   ],
   imports: [
     BrowserModule,

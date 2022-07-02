@@ -3,6 +3,7 @@ export class Bob {
     image: string ;
     brand: string ;
     desc: string ;
+    category : string;
 
     size: string[] ;
     color: string[] ;
@@ -23,6 +24,7 @@ export class Bob {
         image: string ,
         brand: string ,
         desc: string ,
+        category : string,
         size: string[] ,
         color: string[] ,
         carac: string[] ,
@@ -38,6 +40,7 @@ export class Bob {
         this.image = image ;
         this.brand = brand ;
         this.desc = desc ;
+        this.category = category ;
         this.size = size ;
         this.color = color ;
         this.carac = carac ;

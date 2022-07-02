@@ -21,10 +21,20 @@ export class BobService {
     return BOB.filter(bob => bob.id == id);
   }
 
+  getBobByCategWithoutOne(category : string , id : number) : Bob[] {
+    return BOB.filter(bob => bob.category == category && bob.id != id);
+  }
+
   displaySizeMessage(arrayLenght : number) : string {
     if (arrayLenght == 1) {
       return 'Taille disponible : ';
     } else return 'Tailles disponibles : '; 
+  }
+
+  displayColorMessage(arrayLenght : number) : string {
+    if (arrayLenght == 1) {
+      return 'Couleur disponible : ';
+    } else return 'Couleurs disponibles : '; 
   }
 
 }
