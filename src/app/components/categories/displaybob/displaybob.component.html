@@ -3,7 +3,6 @@
     <h1>Nos bobs</h1>
     <div class="categContainer" >
         <a *ngFor="let categ of categArray" class="linkBtn" [routerLink]="['/bob/categ',categ]" > {{categ}} </a>
-    </div>
-    
+    </div>  
     <app-card *ngFor="let bob of bobsArray" [bob]="bob"></app-card>
 </section>

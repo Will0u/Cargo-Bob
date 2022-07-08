@@ -1,0 +1,39 @@
+
+<form>
+    <div>
+        <label for="userMail">Adresse mail</label>
+        <input type="text" name="userMail">
+    </div>
+
+    <div>
+        <label for="userPassword">Mot de passe</label>
+        <input type="text" name="userPassword">
+    </div>
+
+    <div>
+        <label for="userPasswordCheck">Confirmé mot de passe</label>
+        <input type="text" name="userPasswordCheck">
+    </div>
+
+    <div>
+        <label for="userFirstName">Nom</label>
+        <input type="text" name="userFirstName">
+    </div>
+
+    <div>
+        <label for="userName">Prénom</label>
+        <input type="text" name="userName">
+    </div>
+
+    <div>
+        <label for="userNickName">Pseudo</label>
+        <input type="text" name="userNickName">
+    </div>
+
+    <input type="submit" value="M'inscrire">
+
+    <div>
+        <span>Déja inscrit ? Cliquez <a [routerLink]="['/connection']" >ici</a></span>
+    </div>
+    
+</form>

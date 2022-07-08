@@ -1,0 +1,22 @@
+<form #coForm = 'ngForm' (ngSubmit)="checkIds()">
+    <div>
+        <label for="userNickname">Pseudo</label>
+        <input type="text" name="userNickname" required [(ngModel)]="connecUser.nickname" #userMail="ngModel">
+        <span [hidden]="userMail.valid">Requis</span>
+    </div>
+
+    <div>
+        <label for="userPassword">Mot de passe</label>
+        <input type="text" name="userPassword" required [(ngModel)]="connecUser.password" #userPwd="ngModel">
+        <span [hidden]="userPwd.valid">Requis</span>
+    </div>
+
+    <input type="submit" value="Me connecter">
+
+    <div>
+        <span>Mot de passe perdu ? Cliquez <a>ici</a></span> 
+        <br>
+        <span>Pas encore inscrit ? Cliquez <a [routerLink]="['/register']" >ici</a></span>
+    </div>
+    
+</form>

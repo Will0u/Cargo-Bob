@@ -62,7 +62,7 @@ img{
         transform: scale(1.01);
         transition: transform .3s , box-shadow .3s;
     }
-    button{border-radius: 50%;}
+    button{border-radius: 50%;width: 25px;}
     .prevBtn{margin-right: 1rem;}
     .nextBtn{margin-left: 1rem;}
 }
