@@ -9,7 +9,7 @@ export class Bob {
     color: string[] ;
     carac: string[] ;
 
-    id:number ;
+    id?:number ;
     price : number ;
     stock: number ;
 

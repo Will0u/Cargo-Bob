@@ -35,19 +35,26 @@ export class ProductpageComponent implements OnInit {
 
     this.id = parseInt(<string>this.ActivatedRoute.snapshot.paramMap.get('id')) ;
 
-    this.bobDisplayer = this.bobService.getBobById(this.id)[0] ;
-
-    this.bobSizeLenght = this.bobDisplayer.size.length;
-    this.sizeMessage = this.bobService.displaySizeMessage(this.bobSizeLenght);
-
-    this.colorLenght = this.bobDisplayer.color.length ;
-    this.colorMessage = this.bobService.displayColorMessage(this.colorLenght) ;
-
-    this.sameBobArray = this.bobService.getBobByCategWithoutOne(this.bobDisplayer.category, this.id);
-
-    this.samebobArrayLenght = this.sameBobArray.length ;
+    this.checkId(this.id);
   }
 
+  checkId(id : number) {
+    if ( this.bobService.getBobsArray()[id] == null ) {
+      this.router.navigate(['/error404']);
+    } else {
+      this.bobDisplayer = this.bobService.getBobById(id)[0] ;
+
+      this.bobSizeLenght = this.bobDisplayer.size.length;
+      this.sizeMessage = this.bobService.displaySizeMessage(this.bobSizeLenght);
+
+      this.colorLenght = this.bobDisplayer.color.length ;
+      this.colorMessage = this.bobService.displayColorMessage(this.colorLenght) ;
+
+      this.sameBobArray = this.bobService.getBobByCategWithoutOne(this.bobDisplayer.category, id);
+
+      this.samebobArrayLenght = this.sameBobArray.length ;
+    }
+  }
 
   nextElementCarousel() {
     if (this.samebobArrayLenght) {
@@ -64,4 +71,7 @@ export class ProductpageComponent implements OnInit {
       } else this.index--;
     }
   }
+
+
+  
 }

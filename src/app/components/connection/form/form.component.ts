@@ -18,13 +18,12 @@ export class FormComponent implements OnInit {
   ) { }
 
   usersArray ?: UserClass[] ;
-  connecUser = new UserClass('','','','','');
+  connecUser = new UserClass(0,'','','','','');
   test ?: boolean ;
   
 
   ngOnInit(): void {
     this.usersArray = this.UserService.getAllUsers() ;
-    console.log(this.authService.getToken());
   }
 
   checkIds() {

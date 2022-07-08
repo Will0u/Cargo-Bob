@@ -9,7 +9,6 @@ import { FooterComponent } from './components/footer/footer/footer.component';
 import { LegalMentionsComponent } from './components/footer/legal-mentions/legal-mentions.component';
 import { CardComponent } from './components/product/productcard/card/card.component';
 import { ProductpageComponent } from './components/product/productpage/productpage/productpage.component';
-import { SamebobcardComponent } from './components/product/samebobcard/samebobcard.component';
 import { DisplaybobComponent } from './components/categories/displaybob/displaybob.component';
 import { DisplaybobCategComponent } from './components/categories/displaybob-categ/displaybob-categ.component';
 import { FormComponent } from './components/connection/form/form.component';
@@ -29,7 +28,6 @@ import { UserHomeComponent } from './components/user/user-home/user-home.compone
     LegalMentionsComponent,
     CardComponent,
     ProductpageComponent,
-    SamebobcardComponent,
     DisplaybobComponent,
     DisplaybobCategComponent,
     FormComponent,
