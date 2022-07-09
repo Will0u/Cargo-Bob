@@ -2,6 +2,9 @@
     <ul>
         <li><a [routerLink]="['/']">accueil</a></li>
         <li><a [routerLink]="['/','bob']">bobs</a></li>
-        <li><a [routerLink]="['/','connection']">connexion</a></li>
+        <li *ngIf="isLoggedIn == false"><a [routerLink]="['/' , 'connection']">se connecter</a></li>
+        <li *ngIf="isLoggedIn == true"><a (click)="logOut()" >se deco</a></li>
+        <li ><a [routerLink]="['/adminHome']">admin</a></li>
+        <li ><a [routerLink]="['/userHome']">mon compte</a></li>
     </ul>
 </nav>
