@@ -1,2 +1,13 @@
 
 <h1>Votre compte</h1>
+
+<div *ngIf="userDisplay">
+    <p>Bonjour {{userDisplay.name}} !</p>
+    <div>
+        <img src="" alt="">
+        <a href="">Voir mon panier</a>
+    </div>
+    <div>
+        <a href="">Paramètre de mon compte</a>
+    </div>
+</div>
