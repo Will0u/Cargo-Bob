@@ -17,10 +17,7 @@ export class UserServiceService {
 
   getOneUser(nickname : string) 
   {
-    this.getAllUsers().forEach(user => {
-      if (nickname === user.nickname) {
-      } 
-    });
+    return this.getAllUsers().filter(user => nickname === user.nickname)[0];
   }
 
 

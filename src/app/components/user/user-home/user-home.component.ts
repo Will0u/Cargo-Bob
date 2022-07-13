@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserClass } from 'src/app/models/user/user-class';
 import { AuthServiceService } from 'src/app/service/auth/auth-service.service';
 import { UserServiceService } from 'src/app/service/userService/user-service.service';
 
@@ -10,12 +11,19 @@ import { UserServiceService } from 'src/app/service/userService/user-service.ser
 })
 export class UserHomeComponent implements OnInit {
 
+  userDisplay ?: UserClass ;
+  userNickname = this.authService.getToken() ;
+
+
   constructor(
-    private userService : UserServiceService
+    private userService : UserServiceService,
+    private authService : AuthServiceService
   ) { }
 
   ngOnInit(): void {
-    console.log(this.userService.getOneUser('Michoul'));
+    if (this.userNickname) {
+     this.userDisplay = this.userService.getOneUser(this.userNickname) ;
+    } 
   }
 
 }

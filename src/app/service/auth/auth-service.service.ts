@@ -12,7 +12,7 @@ export class AuthServiceService {
   ) { }
 
   signIn(user : UserClass) {
-    localStorage.setItem('token' , user.nickname+user.password);
+    localStorage.setItem('token' , user.nickname);
   }
 
   getToken() {
@@ -32,7 +32,7 @@ export class AuthServiceService {
   }
 
   isAdminLoggedIn() : boolean {
-    if (localStorage.getItem('token') === 'adminadmin') {
+    if (localStorage.getItem('token') === 'admin') {
       return true ;
     } return false ;
   }
