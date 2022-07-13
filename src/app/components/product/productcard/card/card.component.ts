@@ -30,9 +30,9 @@ export class CardComponent implements OnInit {
   }
 
 
-  pushToArticle(id : number )
+  pushToCart(id : number )
   {
-    this.bobService.pushBobInUserArticlesArray(id) ;
+    this.bobService.pushToCart(id) ;
   }
 
 }

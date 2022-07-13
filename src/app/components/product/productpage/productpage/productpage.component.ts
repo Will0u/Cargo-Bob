@@ -79,5 +79,11 @@ export class ProductpageComponent implements OnInit {
   }
 
 
+  pushToCart(id : number )
+  {
+    this.bobService.pushToCart(id) ;
+  }
+
+
   
 }

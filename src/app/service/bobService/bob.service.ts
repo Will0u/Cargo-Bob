@@ -56,7 +56,7 @@ export class BobService {
     return BOB.filter(bob => bob.category == categ);
   }
 
-  pushBobInUserArticlesArray(bobId : number){
+  pushToCart(bobId : number){
     let nickname = this.authService.getToken();
     if (nickname) {
       this.userService.getOneUser(nickname).articlesArray?.push(bobId);
