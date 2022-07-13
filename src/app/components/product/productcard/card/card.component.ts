@@ -29,4 +29,10 @@ export class CardComponent implements OnInit {
     this.isLoggedIn = this.authService.IsLoggedIn();
   }
 
+
+  pushToArticle(id : number )
+  {
+    this.bobService.pushBobInUserArticlesArray(id) ;
+  }
+
 }

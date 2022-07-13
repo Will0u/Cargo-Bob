@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Bob } from 'src/app/models/product/bobClass';
 import { BOB } from 'src/app/models/product/constant/bobConstant';
+import { AuthServiceService } from '../auth/auth-service.service';
 import { UserServiceService } from '../userService/user-service.service';
 
 @Injectable({
@@ -9,7 +10,8 @@ import { UserServiceService } from '../userService/user-service.service';
 export class BobService {
 
   constructor(
-    private userService : UserServiceService
+    private userService : UserServiceService,
+    private authService : AuthServiceService
   ) { }
 
   getBobsArray() : Bob[] {
@@ -52,6 +54,13 @@ export class BobService {
 
   getBobByCateg(categ : string) : Bob[] {
     return BOB.filter(bob => bob.category == categ);
+  }
+
+  pushBobInUserArticlesArray(bobId : number){
+    let nickname = this.authService.getToken();
+    if (nickname) {
+      this.userService.getOneUser(nickname).articlesArray?.push(bobId);
+    }
   }
 
 
