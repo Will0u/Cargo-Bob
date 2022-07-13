@@ -20,5 +20,4 @@ export class UserServiceService {
     return this.getAllUsers().filter(user => nickname === user.nickname)[0];
   }
 
-
 }
