@@ -26,10 +26,18 @@ export class AuthServiceService {
     }
   }
 
-  get isLoggedIn(): boolean {
+  IsLoggedIn(): boolean {
     let authToken = localStorage.getItem('token');
     return authToken !== null ? true : false;
   }
+
+  isAdminLoggedIn() : boolean {
+    if (localStorage.getItem('token') === 'adminadmin') {
+      return true ;
+    } return false ;
+  }
+
+
 
 
 }

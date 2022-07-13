@@ -9,7 +9,8 @@ import { AuthServiceService } from 'src/app/service/auth/auth-service.service';
 })
 export class NavbarComponent implements OnInit {
 
-  isLoggedIn ?: boolean ;
+  isLoggedIn = false ;
+  isAdminLoggedIn = false ;
 
   constructor(
     private authService : AuthServiceService,
@@ -17,12 +18,14 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.isLoggedIn = this.authService.isLoggedIn ;
+    this.isLoggedIn = this.authService.IsLoggedIn() ;
+    this.isAdminLoggedIn = this.authService.isAdminLoggedIn();
   }
 
   logOut () {
     this.authService.logOut();
     this.ngOnInit();
   }
+  
 
 }

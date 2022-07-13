@@ -15,7 +15,7 @@ export class UserGuardGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-      if (this.authService.isLoggedIn !== true) {
+      if (this.authService.IsLoggedIn() !== true) {
         this.router.navigate(['/noAcess']);
       } 
     return true;
