@@ -7,6 +7,13 @@
         <span *ngIf="bobDisplayer.isDelivery">Livraison disponible !</span>
         <span>{{sizeMessage}} {{bobDisplayer.size}}</span>
         <span> {{colorMessage}} {{bobDisplayer.color}}</span>
+        <ng-container [ngSwitch]="isLoggedIn" >
+            <div class="cart" *ngSwitchCase="true" >
+                <span>ajouter au panier</span>
+                <a [routerLink]="['/userHome/cart']">Voir mon panier</a>
+            </div>
+            <a class="connection" *ngSwitchCase="false" [routerLink]="['/connection']">connectez-vous pour pouvoir commander cet article !</a>
+        </ng-container>
     </div>
 
     <h1>caractéristiques</h1>

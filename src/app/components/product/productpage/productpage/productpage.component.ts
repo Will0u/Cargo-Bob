@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Bob } from 'src/app/models/product/bobClass';
+import { AuthServiceService } from 'src/app/service/auth/auth-service.service';
 import { BobService } from 'src/app/service/bobService/bob.service';
 
 @Component({
@@ -24,10 +25,13 @@ export class ProductpageComponent implements OnInit {
 
   index = 0 ;
 
+  isLoggedIn = false ;
+
   constructor(
     private ActivatedRoute : ActivatedRoute,
     private bobService : BobService,
-    private router : Router
+    private router : Router,
+    private authService : AuthServiceService 
   ) { }
 
   ngOnInit(): void {
@@ -36,6 +40,8 @@ export class ProductpageComponent implements OnInit {
     this.id = parseInt(<string>this.ActivatedRoute.snapshot.paramMap.get('id')) ;
 
     this.checkId(this.id);
+    
+    this.isLoggedIn = this.authService.IsLoggedIn() ;
   }
 
   checkId(id : number) {

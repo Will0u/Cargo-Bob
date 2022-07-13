@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Bob } from 'src/app/models/product/bobClass';
+import { AuthServiceService } from 'src/app/service/auth/auth-service.service';
 import { BobService } from 'src/app/service/bobService/bob.service';
 
 @Component({
@@ -13,8 +14,11 @@ export class CardComponent implements OnInit {
   sizeMessage ?: string ;
   sizeLenght ?: number ;
 
+  isLoggedIn = false ;
+
   constructor(
-    private bobService : BobService
+    private bobService : BobService,
+    private authService : AuthServiceService
   ) { }
 
   ngOnInit(): void {
@@ -22,6 +26,7 @@ export class CardComponent implements OnInit {
       this.sizeLenght = this.bob.size.length ;
       this.sizeMessage = this.bobService.displaySizeMessage(this.sizeLenght);
     }
+    this.isLoggedIn = this.authService.IsLoggedIn();
   }
 
 }

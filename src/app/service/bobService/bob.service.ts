@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Bob } from 'src/app/models/product/bobClass';
 import { BOB } from 'src/app/models/product/constant/bobConstant';
+import { UserServiceService } from '../userService/user-service.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BobService {
 
-  constructor() { }
+  constructor(
+    private userService : UserServiceService
+  ) { }
 
   getBobsArray() : Bob[] {
     return BOB ;
@@ -50,5 +53,6 @@ export class BobService {
   getBobByCateg(categ : string) : Bob[] {
     return BOB.filter(bob => bob.category == categ);
   }
+
 
 }

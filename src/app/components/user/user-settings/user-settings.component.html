@@ -1,0 +1,13 @@
+<h1>Paramètres</h1>
+<div *ngIf="userDisplay">
+    <span>{{userDisplay.adressMail}}</span>
+    <span>{{userDisplay.name}}</span>
+    <span>{{userDisplay.firstName}}</span>
+    <span>{{userDisplay.nickname}}</span>
+    <span>{{userDisplay.password}}</span>
+</div>
+
+<div>
+    <a href="">supprimer mon compte</a>
+    <a [routerLink]="['..']">retour</a>
+</div>

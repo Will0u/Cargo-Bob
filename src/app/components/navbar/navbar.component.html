@@ -6,5 +6,6 @@
         <li *ngIf="isLoggedIn == true"><a (click)="logOut()" >se deco</a></li>
         <li *ngIf="isAdminLoggedIn" ><a [routerLink]="['/adminHome']">admin</a></li>
         <li *ngIf="isLoggedIn" ><a [routerLink]="['/userHome']">mon compte</a></li>
+        <li *ngIf="isLoggedIn" ><a [routerLink]="['/userHome/cart']">mon panier</a></li>
     </ul>
 </nav>

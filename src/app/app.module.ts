@@ -18,6 +18,8 @@ import { EditBobComponent } from './components/admin/edit-bob/edit-bob.component
 import { NoAcessComponent } from './components/error/no-acess/no-acess.component';
 import { Error404Component } from './components/error/error404/error404.component';
 import { UserHomeComponent } from './components/user/user-home/user-home.component';
+import { ShoppingCartComponent } from './components/user/shopping-cart/shopping-cart.component';
+import { UserSettingsComponent } from './components/user/user-settings/user-settings.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { UserHomeComponent } from './components/user/user-home/user-home.compone
     NoAcessComponent,
     Error404Component,
     UserHomeComponent,
+    ShoppingCartComponent,
+    UserSettingsComponent,
   ],
   imports: [
     FormsModule,

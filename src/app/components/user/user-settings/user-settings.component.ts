@@ -4,15 +4,14 @@ import { AuthServiceService } from 'src/app/service/auth/auth-service.service';
 import { UserServiceService } from 'src/app/service/userService/user-service.service';
 
 @Component({
-  selector: 'app-user-home',
-  templateUrl: './user-home.component.html',
-  styleUrls: ['./user-home.component.scss']
+  selector: 'app-user-settings',
+  templateUrl: './user-settings.component.html',
+  styleUrls: ['./user-settings.component.scss']
 })
-export class UserHomeComponent implements OnInit {
+export class UserSettingsComponent implements OnInit {
 
   userDisplay ?: UserClass ;
   userNickname = this.authService.getToken() ;
-
 
   constructor(
     private userService : UserServiceService,
@@ -21,8 +20,8 @@ export class UserHomeComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.userNickname) {
-     this.userDisplay = this.userService.getOneUser(this.userNickname) ;
-    } 
+      this.userDisplay = this.userService.getOneUser(this.userNickname) ;
+     } 
   }
 
 }

@@ -19,7 +19,7 @@ export class FormComponent implements OnInit {
   ) { }
 
   usersArray ?: UserClass[] ;
-  connecUser = new UserClass(0,'','','','','');
+  connecUser = new UserClass(0,'','','','','','','');
 
   ngOnInit(): void {
     this.usersArray = this.UserService.getAllUsers() ;

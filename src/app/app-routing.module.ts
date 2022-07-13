@@ -12,7 +12,9 @@ import { AdminGuardGuard } from './components/guards/adminGuard/admin-guard.guar
 import { UserGuardGuard } from './components/guards/userGuard/user-guard.guard';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { ProductpageComponent } from './components/product/productpage/productpage/productpage.component';
+import { ShoppingCartComponent } from './components/user/shopping-cart/shopping-cart.component';
 import { UserHomeComponent } from './components/user/user-home/user-home.component';
+import { UserSettingsComponent } from './components/user/user-settings/user-settings.component';
 
 const routes: Routes = [
   {path: '' , component: MainPageComponent},
@@ -32,7 +34,9 @@ const routes: Routes = [
 
   {path: 'adminHome' , component: HomeComponent , canActivate: [AdminGuardGuard] },
 
-  {path: 'userHome' , component: UserHomeComponent , canActivate: [UserGuardGuard]}
+  {path: 'userHome' , component: UserHomeComponent , canActivate: [UserGuardGuard]},
+  {path: 'userHome/cart' , component: ShoppingCartComponent , canActivate: [UserGuardGuard]} ,
+  {path: 'userHome/settings' , component: UserSettingsComponent, canActivate: [UserGuardGuard]}
   
 ];
 

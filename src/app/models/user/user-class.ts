@@ -1,24 +1,34 @@
 export class UserClass {
     id ?: number ;
-    adresseMail : string ;
+    adressMail : string ;
     password : string ;
     firstName : string ;
     name : string ;
     nickname : string ;
+    address ?: string ;
+    country ?: string ;
+    articlesArray ?: number[] ;
+
 
     constructor(
         id : number ,
-        adresseMail : string ,
+        adressMail : string ,
         password : string ,
         firstName : string ,
         name : string ,
-        nickname : string 
+        nickname : string ,
+        address ?: string ,
+        country ?: string ,
+        articlesArray ?: number[] 
     ) {
         this.id = id ;
-        this.adresseMail = adresseMail;
+        this.adressMail = adressMail;
         this.password = password;
         this.firstName = firstName;
         this.name = name ;
         this.nickname = nickname;
+        this.address = address ;
+        this.country = country ;
+        this.articlesArray = articlesArray ;
     }
 }

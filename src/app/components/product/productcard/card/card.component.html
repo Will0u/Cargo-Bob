@@ -1,10 +1,11 @@
-
-<a *ngIf="bob" class="card" [routerLink]="['/bob',bob.id]">
+<div *ngIf="bob" class="card">
     <img src="{{ bob.image }}" alt="Image de {{ bob.name }}">
-    <div class="infoContainer">
+    <div class="infos">
         <span class="bobName">{{bob.name}}</span>
         <span class="bobBrand">{{bob.brand}}</span>
         <span class="bobPrice">{{bob.price}} €</span>
         <span class="bobSize">{{ sizeMessage }} {{bob.size}}</span>
-    </div>  
-</a>
+        <span *ngIf="isLoggedIn" >ajouter au panier</span>
+        <a [routerLink]="['/bob',bob.id]" >voir +</a>
+    </div>
+</div>
