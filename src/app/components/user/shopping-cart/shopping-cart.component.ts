@@ -31,7 +31,13 @@ export class ShoppingCartComponent implements OnInit {
         });
       }
       console.log(this.bobsArray);
+
+      let a : { [key : string] : any } = {}
+      var result = this.bobsArray.reduce( (acc, o) => (acc[o.name] = (acc[o.name] || 0)+1, acc), a );
+      console.log(result);
     }
   }
+
+  
 
 }
