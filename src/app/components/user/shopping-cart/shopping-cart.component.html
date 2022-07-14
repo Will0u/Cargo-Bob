@@ -1,1 +1,14 @@
 <h1>Votre panier</h1>
+<ng-container *ngIf="bobsArray.length > 0" >
+    <app-shopping-card *ngFor="let bob of bobsArrayCart" [bob]="bob" ></app-shopping-card>
+</ng-container>
+
+<p>total</p>
+
+<ng-container *ngIf="counter" >
+   <div *ngFor="let x of counter | keyvalue" >
+    <p>{{ x.key }} {{ x.value }} </p>
+   </div>
+</ng-container>
+
+

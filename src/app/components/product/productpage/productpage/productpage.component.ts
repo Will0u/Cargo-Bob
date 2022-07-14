@@ -11,6 +11,7 @@ import { BobService } from 'src/app/service/bobService/bob.service';
 })
 export class ProductpageComponent implements OnInit {
 
+  userSize ?: string ;
   id ?: number ;
   bobDisplayer ?: Bob ;
   bobSizeLenght ?: number ; 
@@ -49,12 +50,6 @@ export class ProductpageComponent implements OnInit {
       this.router.navigate(['/error404']);
     } else {
       this.bobDisplayer = this.bobService.getBobById(id)[0] ;
-
-      this.bobSizeLenght = this.bobDisplayer.size.length;
-      this.sizeMessage = this.bobService.displaySizeMessage(this.bobSizeLenght);
-
-      this.colorLenght = this.bobDisplayer.color.length ;
-      this.colorMessage = this.bobService.displayColorMessage(this.colorLenght) ;
 
       this.sameBobArray = this.bobService.getBobByCategWithoutOne(this.bobDisplayer.category, id);
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Bob } from 'src/app/models/product/bobClass';
 import { AuthServiceService } from 'src/app/service/auth/auth-service.service';
 import { BobService } from 'src/app/service/bobService/bob.service';
@@ -14,6 +14,9 @@ export class ShoppingCartComponent implements OnInit {
   userNickname = this.authService.getToken();
   userCart ?: number[]
   bobsArray : Bob[] = [] ;
+  counter ?: {} ; 
+
+  bobsArrayCart : any = [] ;
 
   constructor(
     private userService : UserServiceService,
@@ -23,18 +26,18 @@ export class ShoppingCartComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.userNickname) {
-      this.userCart = this.userService.getOneUser(this.userNickname).articlesArray ;
-
+      this.userCart = this.userService.getOneUser(this.userNickname).articlesArray ;    
       if (this.userCart) {
         this.userCart.forEach(bobId => {
           this.bobsArray.push(this.bobService.getBobById(bobId)[0]) ;
         });
-      }
-      console.log(this.bobsArray);
+      } 
+    }
 
-      let a : { [key : string] : any } = {}
-      var result = this.bobsArray.reduce( (acc, o) => (acc[o.name] = (acc[o.name] || 0)+1, acc), a );
-      console.log(result);
+    this.counter = this.bobService.bobCounter(this.bobsArray) ;
+
+    for (const [key, value] of Object.entries(this.counter)) {
+      this.bobsArrayCart.push([this.bobService.getOneBobByName(key)[0] , value ]) ;
     }
   }
 

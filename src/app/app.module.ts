@@ -20,6 +20,7 @@ import { Error404Component } from './components/error/error404/error404.componen
 import { UserHomeComponent } from './components/user/user-home/user-home.component';
 import { ShoppingCartComponent } from './components/user/shopping-cart/shopping-cart.component';
 import { UserSettingsComponent } from './components/user/user-settings/user-settings.component';
+import { ShoppingCardComponent } from './components/user/shopping-card/shopping-card.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { UserSettingsComponent } from './components/user/user-settings/user-sett
     UserHomeComponent,
     ShoppingCartComponent,
     UserSettingsComponent,
+    ShoppingCardComponent,
   ],
   imports: [
     FormsModule,

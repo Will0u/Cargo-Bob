@@ -22,10 +22,6 @@ export class CardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    if (this.bob) {
-      this.sizeLenght = this.bob.size.length ;
-      this.sizeMessage = this.bobService.displaySizeMessage(this.sizeLenght);
-    }
     this.isLoggedIn = this.authService.IsLoggedIn();
   }
 
@@ -34,5 +30,6 @@ export class CardComponent implements OnInit {
   {
     this.bobService.pushToCart(id) ;
   }
+
 
 }

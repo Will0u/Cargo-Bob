@@ -4,7 +4,6 @@
         <span class="bobName">{{bob.name}}</span>
         <span class="bobBrand">{{bob.brand}}</span>
         <span class="bobPrice">{{bob.price}} €</span>
-        <span class="bobSize">{{ sizeMessage }} {{bob.size}}</span>
         <a *ngIf="isLoggedIn && bob.id" (click)="pushToCart(bob.id)" >ajouter au panier</a>
         <a [routerLink]="['/bob',bob.id]" >voir +</a>
     </div>

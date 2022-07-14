@@ -5,8 +5,6 @@ export class Bob {
     desc: string ;
     category : string;
 
-    size: string[] ;
-    color: string[] ;
     carac: string[] ;
 
     id?:number ;
@@ -25,8 +23,6 @@ export class Bob {
         brand: string ,
         desc: string ,
         category : string,
-        size: string[] ,
-        color: string[] ,
         carac: string[] ,
         price : number ,
         stock: number ,
@@ -41,11 +37,8 @@ export class Bob {
         this.brand = brand ;
         this.desc = desc ;
         this.category = category ;
-        this.size = size ;
-        this.color = color ;
         this.carac = carac ;
         this.price = price ;
-        this.size = size ;
         this.stock = stock ;
         this.isAvailable = isAvailable ;
         this.isDelivery = isDelivery ;

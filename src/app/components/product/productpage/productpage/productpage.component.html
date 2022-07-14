@@ -5,8 +5,6 @@
     <div class="infoContainer"> 
         <span>{{bobDisplayer.price}} €</span>
         <span *ngIf="bobDisplayer.isDelivery">Livraison disponible !</span>
-        <span>{{sizeMessage}} {{bobDisplayer.size}}</span>
-        <span> {{colorMessage}} {{bobDisplayer.color}}</span>
         <ng-container [ngSwitch]="isLoggedIn" >
             <div class="cart" *ngSwitchCase="true" >
                 <a *ngIf="bobDisplayer.id" (click)="pushToCart(bobDisplayer.id)" >ajouter au panier</a>

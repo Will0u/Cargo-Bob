@@ -64,4 +64,26 @@ export class BobService {
   }
 
 
+  deleteFromCart(bobId : number){
+    let nickname = this.authService.getToken();
+    if (nickname) {
+      let userBobsArray = this.userService.getOneUser(nickname).articlesArray ;
+      if (userBobsArray) {
+        let idOfDeletedElement = userBobsArray.indexOf(bobId);
+        userBobsArray.splice(idOfDeletedElement , 1) ;
+      }    
+    }
+  }
+
+
+  bobCounter(array : Bob[] ) {
+    let a : { [key : string] : number } = {}
+    var result = array.reduce( (acc, o) => (acc[o.name] = (acc[o.name] || 0)+1, acc), a );
+    return result;
+  }
+
+  getOneBobByName(name : string) {
+    return this.getBobsArray().filter(bob => bob.name === name) ;
+  }
+
 }

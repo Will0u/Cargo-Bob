@@ -1,0 +1,9 @@
+<div class="card" *ngIf="displayBob" >
+    <img src="{{displayBob.image}}" alt="image de {{ displayBob.name }}">
+    <div>
+        <span class="bobName">{{displayBob.name}}</span>
+        <span class="bobName">{{displayBob.price}} €</span>
+        <span class="bobName"> x {{ quantity }}</span>
+    </div>
+</div>
+
